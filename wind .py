@@ -1,10 +1,8 @@
 import numpy as np
 import pandas as pd
 import displayMenu
-import dataStatistics as dS
 import dataLoad as dL
-import dataPlot as dP
-import dataFilter as dF
+
 pd.options.mode.chained_assignment = None
 
 def menu():
@@ -21,47 +19,53 @@ def menu():
         if choice == 1:
             
             filename = input("Please enter name of file: ")
-            Original_data = dL.dataLoad(filename).copy()
-            data = dL.dataLoad(filename)
+            Nx = input("Please enter Nx: ")
+            Ny = input("Please enter Ny: ")
+            Nz = input("Please enter Nz: ")
+            #Original_data = dL.dataLoad(filename).copy()
+            data = dL.dataLoad(filename,Nx,Ny,Nz)
         # ------------------------------------------------------------------
         # 2. Filter data
         elif choice == 2:
-            if data is None:
-                print("\nError: No file selected!\n")
-            else:
-                data = dF.dataFilter(data,Original_data)
+            print("test")
+            # if data is None:
+            #     print("\nError: No file selected!\n")
+            # else:
+            #     data = dF.dataFilter(data,Original_data)
         # ------------------------------------------------------------------
         # 3. Display Statistics        
         elif choice == 3:
-            if data is None:
-                print("\nError: No file selected!\n")
-            else:
-                print("Statistics")
-                statistics=np.array(["Mean Temperature",
-                                     "Mean Growth rate",
-                                     "Std Temperature",
-                                     "Std Growth rate",
-                                     "Rows",
-                                     "Mean Cold Growth rate",
-                                     "Mean Hot Growth rate"])
-                description=np.array([
-                    "Mean (average) Temperature",
-                    "Mean (average) Growth rate",
-                    "Standard deviation of Temperature",
-                    "Standard deviation of Growth rate",
-                    "The total number of rows in the data",
-                    "Mean (average) Growth rate when Temperature is less than 20 degrees",
-                    "Mean (average) Growth rate when Temperature is greter than 50 degrees"])
-                selected=int(displayMenu.displayMenu(description))-1
-                statistic=dS.dataStatistics(data, statistics[selected])
-                print(statistic)
+            print("test")
+            # if data is None:
+            #     print("\nError: No file selected!\n")
+            # else:
+            #     print("Statistics")
+            #     statistics=np.array(["Mean Temperature",
+            #                          "Mean Growth rate",
+            #                          "Std Temperature",
+            #                          "Std Growth rate",
+            #                          "Rows",
+            #                          "Mean Cold Growth rate",
+            #                          "Mean Hot Growth rate"])
+            #     description=np.array([
+            #         "Mean (average) Temperature",
+            #         "Mean (average) Growth rate",
+            #         "Standard deviation of Temperature",
+            #         "Standard deviation of Growth rate",
+            #         "The total number of rows in the data",
+            #         "Mean (average) Growth rate when Temperature is less than 20 degrees",
+            #         "Mean (average) Growth rate when Temperature is greter than 50 degrees"])
+            #     selected=int(displayMenu.displayMenu(description))-1
+            #     statistic=dS.dataStatistics(data, statistics[selected])
+            #     print(statistic)
         # ------------------------------------------------------------------
         # 4. Plot data
         elif choice == 4:
-            if data is None:
-                print("\nError: No file selected!\n")
-            else:
-                dP.dataPlot(data)   
+            print("test")
+            # if data is None:
+            #     print("\nError: No file selected!\n")
+            # else:
+            #     dP.dataPlot(data)   
         # ------------------------------------------------------------------
         # 5. Display current file after filters   
         elif choice == 5:
