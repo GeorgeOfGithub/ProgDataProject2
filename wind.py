@@ -22,6 +22,9 @@ def menu():
             Nx = input("Please enter Nx: ")
             Ny = input("Please enter Ny: ")
             Nz = input("Please enter Nz: ")
+            Nx = int(Nx)
+            Ny = int(Ny)
+            Nz = int(Nz)
             #Original_data = dL.dataLoad(filename).copy()
             data = dL.dataLoad(filename,Nx,Ny,Nz)
         # ------------------------------------------------------------------
@@ -72,7 +75,7 @@ def menu():
             if data is None:
                 print("\nError: No file selected!\n")
             else:
-                print(data.to_string(index=False))
+                print(data)
         # ------------------------------------------------------------------
         # 6. Quit
         elif choice == 6:

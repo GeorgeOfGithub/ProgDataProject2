@@ -10,21 +10,22 @@ import numpy as np
 
 def dataLoad(dataname,Nx,Ny,Nz):
 
+
+
     data = None
-    Nx = Nx
-    Ny = Ny
-    Nz = Nz
-    # reads the data with delimiters set as whitespaces
+
     try:
-        dt = np.dtype([('a', 'f4'), ('b', 'f4'), ('c', 'f4')])
-        data = np.fromfile(dataname)
-        df = pd.DataFrame(data)
-        print(df)
-        print(df[0:8192])
-        
-
-        struct.unpack('f', file.read(4))
-
+        data = np.fromfile(dataname,np.float32)
+        if len(data) < Nx*Ny*Nz:
+            print("\nThe size of the matrix is too large for the amount of data!\n")
+            return
+        df = np.zeros(shape=(Nx,Ny,Nz))
+        n=0
+        for x in range(Nx):
+            for y in range(Ny):
+                for z in range(Nz):
+                    df[x,y,z] = data[n]
+                    n=n+1
         colnames=['Temperature', 'Growth rate', 'Bacteria'] 
         # data = pd.read_csv(dataname,delim_whitespace=True,names=colnames,header=None)
         # data,error_amount = scan(data)
@@ -32,7 +33,7 @@ def dataLoad(dataname,Nx,Ny,Nz):
         # print("These have been removed. Returning to main menu...")
     except OSError:
         print("\n404 FILE NOT FOUND! TRY ANOTHER FILENAME\n")
-    return data
+    return df
 
 # def scan(data):
 #     # This function goes through the dataframe and searches for lines with errors
