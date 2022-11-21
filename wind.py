@@ -34,7 +34,6 @@ def menu():
             # if data is None:
             #     print("\nError: No file selected!\n")
             # else:
-            #     data = dF.dataFilter(data,Original_data)
         # ------------------------------------------------------------------
         # 3. Display Statistics        
         elif choice == 3:
@@ -42,25 +41,6 @@ def menu():
             # if data is None:
             #     print("\nError: No file selected!\n")
             # else:
-            #     print("Statistics")
-            #     statistics=np.array(["Mean Temperature",
-            #                          "Mean Growth rate",
-            #                          "Std Temperature",
-            #                          "Std Growth rate",
-            #                          "Rows",
-            #                          "Mean Cold Growth rate",
-            #                          "Mean Hot Growth rate"])
-            #     description=np.array([
-            #         "Mean (average) Temperature",
-            #         "Mean (average) Growth rate",
-            #         "Standard deviation of Temperature",
-            #         "Standard deviation of Growth rate",
-            #         "The total number of rows in the data",
-            #         "Mean (average) Growth rate when Temperature is less than 20 degrees",
-            #         "Mean (average) Growth rate when Temperature is greter than 50 degrees"])
-            #     selected=int(displayMenu.displayMenu(description))-1
-            #     statistic=dS.dataStatistics(data, statistics[selected])
-            #     print(statistic)
         # ------------------------------------------------------------------
         # 4. Plot data
         elif choice == 4:
@@ -68,7 +48,6 @@ def menu():
             # if data is None:
             #     print("\nError: No file selected!\n")
             # else:
-            #     dP.dataPlot(data)   
         # ------------------------------------------------------------------
         # 5. Display current file after filters   
         elif choice == 5:
