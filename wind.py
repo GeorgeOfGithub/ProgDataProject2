@@ -22,11 +22,14 @@ def menu():
             Nx = input("Please enter Nx: ")
             Ny = input("Please enter Ny: ")
             Nz = input("Please enter Nz: ")
-            Nx = int(Nx)
-            Ny = int(Ny)
-            Nz = int(Nz)
-            #Original_data = dL.dataLoad(filename).copy()
-            data = dL.dataLoad(filename,Nx,Ny,Nz)
+            if Nx.isdigit() and Ny.isdigit() and Nz.isdigit():
+                Nx = int(Nx)
+                Ny = int(Ny)
+                Nz = int(Nz)
+                #Original_data = dL.dataLoad(filename).copy()
+                data = dL.dataLoad(filename,Nx,Ny,Nz)
+            else:
+                print("Error: One or more of the inputs are not numbers!\n")
         # ------------------------------------------------------------------
         # 2. Filter data
         elif choice == 2:
