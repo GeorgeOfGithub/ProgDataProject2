@@ -26,10 +26,9 @@ def menu():
                 Nx = int(Nx)
                 Ny = int(Ny)
                 Nz = int(Nz)
-                #Original_data = dL.dataLoad(filename).copy()
                 data = dL.dataLoad(filename,Nx,Ny,Nz)
             else:
-                print("Error: One or more of the inputs are not numbers!\n")
+                print("Error: One or more of the inputs are not whole numbers!\n")
         # ------------------------------------------------------------------
         # 2. Filter data
         elif choice == 2:

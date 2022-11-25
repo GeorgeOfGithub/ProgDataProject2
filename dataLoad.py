@@ -2,11 +2,11 @@ import struct
 import pandas as pd
 import numpy as np
 # Author: Lucas Buhelt
-# This function loads data from a csv or text file
+# This function loads data from a .bin
 #
-# Input: file located in same location as python file, with file name extension
+# Input: bin file located in same location as python file, with file name extension
 #
-# Output: data, with all erroneous line removed
+# Output: data as a 3d numpy array
 
 def dataLoad(dataname,Nx,Ny,Nz):
 
