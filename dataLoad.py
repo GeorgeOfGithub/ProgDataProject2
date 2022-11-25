@@ -25,6 +25,7 @@ def dataLoad(dataname,Nx,Ny,Nz):
                     n=n+1
 
     except OSError:
-        print("\n404 FILE NOT FOUND! TRY ANOTHER FILENAME\n")
+        print("\nError: File not found, try another name!\n")
+        return
     return df
 

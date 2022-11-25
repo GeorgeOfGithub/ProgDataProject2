@@ -1,3 +1,4 @@
+import signal
 import numpy as np
 
 def dataStatistics(data,statistic,Yref,Zref,DeltaX):
@@ -23,14 +24,15 @@ def dataStatistics(data,statistic,Yref,Zref,DeltaX):
         sum1=0
         sum2=0
         for x in range (Nx):
+            data[0,2,3]
             sum1=sum1+data[x,:,:]
         M=sum1/Nx
         for x in range(Nx):
             sum2=sum2+(data[x,:,:]-M)*(data[x,:,:]-M)
         result=sum2/Nx
-    elif statistic == "CROSS-CORRELATION":
+    elif statistic == "CROSS CORRELATION":
         sum1=0
         for x in range(Nx-DeltaX):
-            sum1=sum1+data[x,:,:]*data[x+DeltaX,Yref,Zref]
+            sum1=sum1+data[x,:,:]*data[x+DeltaX,Yref-1,Zref-1]
         result=sum1/(Nx-DeltaX)
     return result
