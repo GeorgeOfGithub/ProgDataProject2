@@ -1,4 +1,3 @@
-import struct
 import pandas as pd
 import numpy as np
 # Author: Lucas Buhelt
