@@ -62,15 +62,14 @@ def menu():
                         else:
                             statistic=dS.dataStatistics(data,statistics[selected],Yref,Zref,Dx)
                             print(statistic)
-                        
                     else:
                         print("\nError: One or more of the inputs are not whole numbers!\n")
                 else:
                     statistic=dS.dataStatistics(data,statistics[selected],Yref,Zref,Dx)
 
-                    print(statistic)
+                print(statistic)
         # ------------------------------------------------------------------
-        # 4. Plot data
+        # 3. Plot data
         elif choice == 3:
             Yref=0
             Zref=0
@@ -99,22 +98,24 @@ def menu():
                         Dx = int(Dx)
                         if Nx<=Dx or Ny<Yref or Nz<Zref:
                             print("\nError: Numbers outside of array!\n")
-                            menu()
+                        else:
+                            result =dS.dataStatistics(data,statistics[selected],Yref,Zref,Dx)
+                            dP.dataPlot(result,statistics[selected])  
                     else:
                         print("\nError: One or more of the inputs are not whole numbers!\n")
-                        menu()
-                result =dS.dataStatistics(data,statistics[selected],Yref,Zref,Dx)
-       
-                dP.dataPlot(result,statistics[selected])  
+                       
+                else:
+                    result =dS.dataStatistics(data,statistics[selected],Yref,Zref,Dx)
+                    dP.dataPlot(result,statistics[selected])  
         # ------------------------------------------------------------------
-        # 5. Display current file after filters   
+        # 4. Display current file after filters   
         elif choice == 4:
             if data is None:
                 print("\nError: No file selected!\n")
             else:
                 print(data)
         # ------------------------------------------------------------------
-        # 6. Quit
+        # 5. Quit
         elif choice == 5:
         # End
             break        

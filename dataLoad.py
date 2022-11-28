@@ -23,7 +23,7 @@ def dataLoad(dataname,Nx,Ny,Nz):
                 for z in range(Nz):
                     df[x,y,z] = data[n]
                     n=n+1
-
+        print("\nFile loaded successfully.\n")
     except OSError:
         print("\nError: File not found, try another name!\n")
         return

@@ -6,15 +6,8 @@ from mpl_toolkits.mplot3d import Axes3D
 
 #statistic={"Mean", "Variance", "Cross correlation"}
 
+#from data I will receive from statistics I extract length of Ny and Nz
 
-#from data I will receive from statistics i need to extract length of Ny and Nz
-#data = np.random.randint(10, size=(32, 32))
-
-#print(data)
-#statistic="Mean"
-
-
-#I want data from statistics
 def dataPlot(result, statistic):
     statistic = statistic.lower()
     x = np.arange(result.shape[1])
